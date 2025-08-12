@@ -6,7 +6,7 @@ import { NgIf, NgFor } from '@angular/common';
   selector: 'app-employees-list',
   imports: [NgIf, NgFor],
   templateUrl: './employees-list.html',
-  styleUrl: './employees-list.css'
+  styleUrls: ['./employees-list.css']
 })
 export class EmployeesList {
   employees: Employee[]=[
