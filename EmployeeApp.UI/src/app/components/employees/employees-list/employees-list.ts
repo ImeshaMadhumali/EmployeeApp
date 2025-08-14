@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../../models/employee.model';
 import { NgIf, NgFor } from '@angular/common';
 import { EmployeesService } from '../../../services/employees.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-employees-list',
-  standalone: true,         
-  imports: [NgIf, NgFor],    
+  standalone: true,
+  imports: [NgIf, NgFor, RouterLink],
   templateUrl: './employees-list.html',
   styleUrls: ['./employees-list.css']
 })
