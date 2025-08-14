@@ -1,41 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../../models/employee.model';
 import { NgIf, NgFor } from '@angular/common';
+import { EmployeesService } from '../../../services/employees.service';
 
 @Component({
   selector: 'app-employees-list',
-  imports: [NgIf, NgFor],
+  standalone: true,         
+  imports: [NgIf, NgFor],    
   templateUrl: './employees-list.html',
   styleUrls: ['./employees-list.css']
 })
-export class EmployeesList {
-  employees: Employee[]=[
-  {
-    id: 'EMP001',
-    name: 'Alice Johnson',
-    email: 'alice.johnson@example.com',
-    phone: 94771234567,
-    salary: 85000,
-    department: 'Human Resources'
+export class EmployeesList implements OnInit {
+  employees: Employee[] = [];
+
+  constructor(private employeesService: EmployeesService) {}
+
+  ngOnInit(): void {
+   this.employeesService.getAllEmployees().subscribe({
+  next: (employees) => {
+    console.log('Received from API:', employees);
+    this.employees = employees;
   },
-  {
-    id: 'EMP002',
-    name: 'Ravi Perera',
-    email: 'ravi.perera@example.com',
-    phone: 94771239876,
-    salary: 95000,
-    department: 'Finance'
-  },
-  {
-    id: 'EMP003',
-    name: 'Sophia Lee',
-    email: 'sophia.lee@example.com',
-    phone: 94771231234,
-    salary: 78000,
-    department: 'IT'
+  error: (error) => {
+    console.error('Error fetching employees:', error);
   }
-  ];
-  constructor() {}
-  ngOnInit(): void{
- }
+});
+
+  }
 }
