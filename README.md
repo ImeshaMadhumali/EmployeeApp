@@ -59,7 +59,7 @@ This application allows users to Create, Read, Update, and Delete employee recor
 dotnet run
 
 
--API will be available at: https://localhost:7001 
+-API will be available at: https://localhost:7107 
 
 ## 🏷️ Frontend Setup (Angular)
 
@@ -73,7 +73,7 @@ npm install
 
 -Update the API base URL in employees.service.ts:
 
-baseApiUrl = 'https://localhost:7001/api';
+baseApiUrl = 'https://localhost:7107/api';
 
 
 -Start the Angular app:
@@ -105,14 +105,6 @@ api/employees/{id}	- Delete employee
 
 Employee List
 ![output1](https://github.com/user-attachments/assets/118d163c-ad30-4745-9e2b-b314411b6b8d)
-
-
-Edit/Update Employee
-![output2](https://github.com/user-attachments/assets/ec74d7a2-e7e1-4c3b-9437-6931dd7a2f3a)
-
-
-Add Employee
-![output3](https://github.com/user-attachments/assets/f4856c94-6a51-4132-b77a-78d1b17543b4)
 
 
 
