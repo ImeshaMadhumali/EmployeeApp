@@ -86,10 +86,19 @@ ng serve --o
 📖 API Endpoints
 
 api/employees	- Get all employees
+
+
 api/employees/{id} - Get employee by ID
+
+
 api/employees	- Create new employee
+
+
 api/employees/{id} - Update employee
+
+
 api/employees/{id}	- Delete employee
+
 
 🖼️ Screenshots
 
